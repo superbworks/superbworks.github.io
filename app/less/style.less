@@ -1,0 +1,103 @@
+@import "common/normalize.less";
+@import "common/mixings.less";
+
+.font('geomanistlight', '../font/geomanistlight');
+
+@geomanistlight: geomanistlight, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@grid: 					20px;
+
+@base-font-family: 		@geomanistlight;
+@base-font-size:        20px;
+@base-line-height:      1.2;
+
+@medium:     			~"only screen and (min-width : 415px) and (min-height: 415px)";
+
+html, body {height: 100%;}
+
+body {
+	font: @base-font-size @base-font-family;
+	line-height: @base-line-height;
+	color: #fff;
+	background: url("../img/bg.png") no-repeat center center;
+	background-size: cover;
+
+	@media @medium {
+		background-size: 100% 100%;
+	}
+}
+
+a {
+	-webkit-tap-highlight-color: transparent;
+}
+
+h1 {
+	font-size: @base-font-size;
+	font-weight: normal;
+}
+
+.table {
+  	display: table;
+  	width: 100%;
+}
+
+.cell {
+  	display: table-cell !important;
+  	vertical-align: middle;
+  	text-align: center;
+}
+
+.logo {
+	display: inline-block;
+	width: 250px;
+	height: 110px;
+	path {
+		fill:#FFFFFF;
+	}
+
+	@media @medium {
+		width: 414px;
+	}
+}
+
+header, footer {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	left: 0;
+}
+
+header {
+	top: @grid;
+
+	@media @medium {
+		top: 3*@grid;
+	}
+}
+
+footer {
+	bottom: @grid;
+
+	@media @medium {
+		bottom: 3*@grid;
+	}
+}
+
+.button {
+	color: #fff;
+	border: 1px solid #FFF;
+	display: inline-block;
+	padding: (@grid - 1) 1.5*@grid;
+	height: 3*@grid;
+	border-radius: 1.5*@grid;
+	box-sizing: border-box;
+	font-size: 1em;
+	text-align: center;
+	text-decoration: none;
+	.transition(all, 300ms);
+
+	&:hover {
+		.scale(1.1);
+  	}
+}
+
